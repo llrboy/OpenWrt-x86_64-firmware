@@ -11,12 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.9.1/g' package/base-files/files/bin/config_generate
-sed -i '11s/lan/wan/g' package/base-files/files/etc/board.d/99-default_network
-sed -i '12s/wan/lan/g' package/base-files/files/etc/board.d/99-default_network
-# sed -i "159a set network.$1.gateway='192.168.9.1'" package/base-files/files/bin/config_generate
-# sed -i "159a set network.$1.dns='127.0.0.1 223.5.5.5 8.8.8.8'" package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
 
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-wget -O feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg https://raw.githubusercontent.com/zjjxwhh/OpenWrt-x86_64-firmware/main/assets/black-network-switch-with-cables.jpg
